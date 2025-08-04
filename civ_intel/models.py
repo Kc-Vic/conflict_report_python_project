@@ -77,7 +77,10 @@ class Report(models.Model):
         null=True, 
         blank=True
     )
-
+    class Meta:
+        ordering = ['-created_at']
+    def __str__(self):
+        return f"{self.title} {self.author}"
 
 class Comment(models.Model):
     report = models.ForeignKey(
@@ -89,3 +92,7 @@ class Comment(models.Model):
     comment = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    class Meta:
+        ordering = ['-created_at']
+    def __str__(self):
+        return f"Comment by {self.author.username} on {self.report.title} {self.comment}"

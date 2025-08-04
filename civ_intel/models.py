@@ -49,6 +49,7 @@ class State(models.Model):
         ('YO', 'Yobe'),
     ]
 
+
 class Report(models.Model):
     title = models.CharField(max_length=200, unique=True)
     slug = models.SlugField(max_length=200, unique=True)
@@ -60,8 +61,8 @@ class Report(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     location = models.ForeignKey(
         State,
-        on_delete=models.CASCADE,
-        related_name="reports",
+        on_delete=models.RESTRICT,
+        related_name="state_reports",
         null=True,
         blank=True,
         help_text="Select the state where the incident occurred"
@@ -76,3 +77,15 @@ class Report(models.Model):
         null=True, 
         blank=True
     )
+
+
+class Comment(models.Model):
+    report = models.ForeignKey(
+        Report, on_delete=models.CASCADE, related_name="comments"
+    )
+    author = models.ForeignKey(
+        User, on_delete=models.CASCADE, related_name="commenter"
+    )
+    comment = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

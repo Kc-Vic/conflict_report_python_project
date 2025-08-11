@@ -1,0 +1,298 @@
+[
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Abia",
+            "code": "AB"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Adamawa",
+            "code": "AD"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Akwa Ibom",
+            "code": "AK"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Anambra",
+            "code": "AN"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Bauchi",
+            "code": "BA"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Bayelsa",
+            "code": "BY"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Benue",
+            "code": "BE"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Borno",
+            "code": "BO"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Cross River",
+            "code": "CR"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Delta",
+            "code": "DE"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Ebonyi",
+            "code": "EB"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Edo",
+            "code": "ED"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Ekiti",
+            "code": "EK"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Enugu",
+            "code": "EN"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Gombe",
+            "code": "GO"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Imo",
+            "code": "IM"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Jigawa",
+            "code": "JI"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Kaduna",
+            "code": "KD"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Kano",
+            "code": "KN"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Katsina",
+            "code": "KT"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Kebbi",
+            "code": "KE"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Kogi",
+            "code": "KO"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Kwara",
+            "code": "KW"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Lagos",
+            "code": "LA"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Nasarawa",
+            "code": "NA"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Niger",
+            "code": "NI"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Ogun",
+            "code": "OG"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Ondo",
+            "code": "ON"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Osun",
+            "code": "OS"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Oyo",
+            "code": "OY"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Plateau",
+            "code": "PL"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Rivers",
+            "code": "RI"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Sokoto",
+            "code": "SO"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Taraba",
+            "code": "TA"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Yobe",
+            "code": "YO"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Zamfara",
+            "code": "ZA"
+        }
+    },
+    {
+        "model": "civ_intel.state",
+        "pk": null,
+        "fields": {
+            "name": "Abuja",
+            "code": "FC"
+        }   
+    }
+]

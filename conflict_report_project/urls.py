@@ -16,8 +16,8 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from civ_intel import views
+
 urlpatterns = [
+    path("", include("civ_intel.urls"), name="civ_intel-urls"),
     path('admin/', admin.site.urls),
-    path('civ_intel/', views.report_feed, name='Report Feed'),
 ]

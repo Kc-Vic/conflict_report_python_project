@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Conflict Report Feed</title>
+</head>
+<body class="section">
+    <div class="container">
+        <h1 class="title has-text-centered">Conflict Report Feed</h1>
+        {% for report in object_list %}
+        <div class="report-card">
+            <div class="report-header">
+                <span class="tweet-author">
+                    {% if report.anonymous %}
+                        Anonymous
+                    {% else %}
+                        {{ report.author.username }}
+                    {% endif %}
+                </span>
+                <span class="report-date">{{ report.created_at|date:"M d, Y H:i" }}</span>
+                {% if report.location %}
+                <span class="report-location">{{ report.location.name }}</span>
+                {% endif %}
+            </div>
+            <div class="report-content">
+                <strong>{{ report.title }}</strong>
+                <p>{{ report.content }}</p>
+            </div>
+            {% if report.attachment %}
+            <div class="report-attachment">
+                <a href="{{ report.attachment.url }}" target="_blank">View Attachment</a>
+            </div>
+            {% endif %}
+            <div class="report-comments">
+                <strong>Comments:</strong>
+                {% for comment in report.comments.all %}
+                <div class="report-comment">
+                    <span class="has-text-weight-bold">
+                        {{ comment.author.username }}
+                    </span>:
+                    {{ comment.comment }}
+                    <span class="has-text-grey is-size-7">
+                        ({{ comment.created_at|date:"M d, Y H:i" }})
+                    </span>
+                </div>
+                {% empty %}
+                <div class="report-comment has-text-grey">No comments yet.</div>
+                {% endfor %}
+            </div>
+        </div>
+        {% empty %}
+        <div class="notification is-warning has-text-centered">
+            No reports found.
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

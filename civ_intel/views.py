@@ -1,6 +1,9 @@
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.views import generic
+from .models import Report
 
 # Create your views here.
-def report_feed(request):
-    return HttpResponse("Hello, this is the feed page of the civ_intel app.")
+
+class ReportFeedView(generic.ListView):
+   queryset = Report.objects.all()
+   template_name = 'civ_intel/report_list.html'

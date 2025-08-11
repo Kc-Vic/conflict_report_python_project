@@ -10,13 +10,13 @@ STATUS = (
 
 # Create your models here.
 class State(models.Model):
-    name = models.CharField(max_length=100, unique=True)
-    code = models.CharField(max_length=10, unique=True)
+    name = models.CharField(max_length=100, null=True)
+    code = models.CharField(max_length=10, null=True)
 
     class Meta:
         ordering = ['name']
         verbose_name_plural = "States"
-        
+
     def __str__(self):
         return self.name
 

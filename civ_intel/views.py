@@ -9,7 +9,7 @@ class ReportFeedView(generic.ListView):
    paginate_by = 3
 
 def report_detail(request, slug):
-   queryset = Report.objects.filter(status=1)
+   queryset = Report.objects
    report = get_object_or_404(queryset, slug=slug)
 
    return render(request, 'civ_intel/report_detail.html', {'report': report},)

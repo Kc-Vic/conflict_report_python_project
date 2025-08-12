@@ -27,6 +27,7 @@
                             <a href="{% url 'report_detail' report.slug %}" class="post-link">
                                 <h2 class="card-title">{{ report.title }}</h2>
                             </a>
+                            <p class="card-text text-muted h6">{{ report.location }}</p>
 
                             <hr />
                             <p class="card-text">{{ report.content|truncatewords:30 }}</p>

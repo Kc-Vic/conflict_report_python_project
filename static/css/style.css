@@ -1,0 +1,90 @@
+body {
+    background: #15202b;
+    color: #d9d9d9;
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    margin: 0;
+}
+
+.feed-container {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.report-card {
+    background: #192734;
+    border-radius: 16px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    border: 1px solid #22303c;
+    transition: box-shadow 0.2s;
+}
+
+.report-card:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+.report-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.report-author {
+    font-weight: bold;
+    margin-right: 1rem;
+    color: #1da1f2;
+}
+
+.report-date {
+    color: #8899a6;
+    font-size: 0.9em;
+}
+
+.report-location {
+    font-size: 0.9em;
+    color: #1da1f2;
+    margin-left: auto;
+}
+
+.report-content {
+    margin-bottom: 1rem;
+    font-size: 1.1em;
+}
+
+.report-attachment a {
+    color: #1da1f2;
+    text-decoration: underline;
+}
+
+.report-comments {
+    margin-top: 1rem;
+    padding-left: 1rem;
+    border-left: 2px solid #22303c;
+}
+
+.report-comment {
+    margin-bottom: 0.5rem;
+    color: #d9d9d9;
+}
+
+.report-comment .has-text-weight-bold {
+    color: #1da1f2;
+}
+
+.notification {
+    background: #22303c;
+    color: #d9d9d9;
+    border-radius: 8px;
+    padding: 1rem;
+    margin-top: 2rem;
+    text-align: center;
+}
+
+h1.title, .title {
+    color: #d9d9d9;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+}

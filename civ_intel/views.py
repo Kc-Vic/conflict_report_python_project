@@ -1,5 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 from django.views import generic
 from django.contrib import messages
 from .models import Report
@@ -15,6 +16,7 @@ class ReportFeedView(generic.ListView):
    template_name = 'civ_intel/index.html'
    paginate_by = 3
 
+@login_required
 def report_add(request):
    if request.method == "POST":
        report_form = ReportForm(request.POST, request.FILES)
@@ -25,7 +27,7 @@ def report_add(request):
            messages.add_message(
                request, messages.SUCCESS, "Your report has been submitted"
            )
-           return redirect('civ_intel:feed')
+           return redirect('feed')
    else:
       report_form = ReportForm()
    return render(request, 'civ_intel/report_add.html', {'report_form': report_form})
@@ -45,7 +47,10 @@ def report_detail(request, slug):
         messages.add_message(
             request, messages.SUCCESS, "Your post has been submitted"
         )
-   comment_form = CommentForm()
+        return redirect('report_detail', slug=report.slug)
+   else:
+      comment_form = CommentForm()
+   
 
 
    return render(

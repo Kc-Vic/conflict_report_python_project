@@ -31,11 +31,11 @@
 
                             <hr />
                             <p class="card-text">{{ report.content|truncatewords:30|safe }}</p>
-                            <div class="mb-2">
+                            <a href="{% url 'add_comment' %}" class="mb-2 post-link">
                                 <strong class="text-secondary">
                                     Add comment <i class="far fa-comment"></i> {{ report.comments.count }}
                                 </strong>
-                            </div>
+                            </a>
                             <p class="card-text text-muted h6">{{ report.created_at}}</p>
                         </div>
                     </div>

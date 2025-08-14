@@ -31,7 +31,7 @@
 
                             <hr />
                             <p class="card-text">{{ report.content|truncatewords:30|safe }}</p>
-                            <a href="{% url 'add_comment' %}" class="mb-2 post-link">
+                            <a href="{% url 'report_detail' report.slug %}" class="mb-2 post-link">
                                 <strong class="text-secondary">
                                     Add comment <i class="far fa-comment"></i> {{ report.comments.count }}
                                 </strong>

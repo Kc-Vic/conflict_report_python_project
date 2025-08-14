@@ -32,11 +32,9 @@
                             <hr />
                             <p class="card-text">{{ report.content|truncatewords:30|safe }}</p>
                             <div class="mb-2">
-                                {% if report.comment %}
-                                <i class="fas fa-comment"></i> {{ report.comment|length }}
-                                {% else %}
-                                <i class="far fa-comment"></i>
-                                {% endif %}
+                                <strong class="text-secondary">
+                                    Add comment <i class="far fa-comment"></i> {{ report.comments.count }}
+                                </strong>
                             </div>
                             <p class="card-text text-muted h6">{{ report.created_at}}</p>
                         </div>

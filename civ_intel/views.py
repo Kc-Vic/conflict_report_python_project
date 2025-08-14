@@ -15,5 +15,15 @@ class ReportFeedView(generic.ListView):
 def report_detail(request, slug):
    queryset = Report.objects
    report = get_object_or_404(queryset, slug=slug)
+   comments = report.comments.all().order_by('-created_at')
+   comment_count = report.comments.count()
 
-   return render(request, 'civ_intel/report_detail.html', {'report': report},)
+
+   return render(
+      request, 'civ_intel/report_detail.html', 
+      {
+         'report': report,
+         'comments': comments,
+         'comment_count': comment_count
+      },
+   )

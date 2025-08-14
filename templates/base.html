@@ -62,7 +62,11 @@
                     {% endif %}
                 </ul>
                 <span class="navbar-text text-muted">
-                    adventures of a software developer
+                    {% if user.is_authenticated %}
+                    <span class="user-greeting">Hello, {{ user.username }}!</span>
+                    {% else %}
+                    <span class="user-greeting">You are viewing as a guest. Log in or sign up to join the conversation and start reporting.</span>
+                    {% endif %}
                 </span>
             </div>
         </div>

@@ -1,5 +1,6 @@
 body {
     background-color: #F9FAFC;
+    background-image: url('/static/images/default.jpg');
 }
 
 .brand {

@@ -27,7 +27,16 @@
                             <a href="{% url 'report_detail' report.slug %}" class="post-link">
                                 <h2 class="card-title">{{ report.title }}</h2>
                             </a>
-                            <p class="card-text text-muted h6">{{ report.location }}</p>
+                            <span><p class="card-text text-muted h6">{{ report.location }}</p></span>
+                            <span class="badge bg-secondary">
+                                {% if report.status == 0 %}
+                                <i class="fal fa-badge">Unverified</i>
+                                {% elif report.status == 1 %}
+                                <i class="badge bg-success" style="color: lightgreen;">Verified</i>
+                                {% else %}
+                                <i class="far fa-times-circle" style="color: red">False</i>
+                                {% endif %}
+                            </span>
 
                             <hr />
                             <p class="card-text">{{ report.content|truncatewords:30|safe }}</p>

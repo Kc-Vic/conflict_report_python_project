@@ -5,9 +5,9 @@ from django.contrib.auth.models import User
 
 # Define the status choices for the report
 STATUS = (
-    (0, "Draft"),
-    (1, "Published"),
-    (2, "Approved"),
+    (0, "Pending"),
+    (1, "Verified"),
+    (2, "Unverified"),
 )
 
 # Create your models here.

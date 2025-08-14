@@ -50,8 +50,6 @@ def report_detail(request, slug):
         return redirect('report_detail', slug=report.slug)
    else:
       comment_form = CommentForm()
-   
-
 
    return render(
       request, 'civ_intel/report_detail.html', 
@@ -62,3 +60,37 @@ def report_detail(request, slug):
          'comment_form': comment_form,
       },
    )
+
+@login_required
+def report_delete(request, slug):
+    report = get_object_or_404(Report, slug=slug, author=request.user)
+    if request.method == "POST":
+        # Delete the report
+        report.delete()
+        messages.add_message(
+            request, messages.SUCCESS, 
+            "Your report has been deleted successfully."
+        )
+        return redirect('feed')
+    else:
+        messages.add_message(
+            request, messages.ERROR, 
+            "You are not authorized to delete this report."
+        )
+        # Redirect to the report detail page or any other page
+    return redirect('report_detail', slug=slug)
+
+@login_required
+def report_edit(request, slug):
+    report = get_object_or_404(Report, slug=slug, author=request.user)
+    if request.method == "POST":
+        report_form = ReportForm(request.POST, request.FILES, instance=report)
+        if report_form.is_valid():
+            report_form.save()
+            messages.add_message(
+                request, messages.SUCCESS, "Your report has been updated"
+            )
+            return redirect('report_detail', slug=report.slug)
+    else:
+        report_form = ReportForm(instance=report)
+    return render(request, 'civ_intel/report_edit.html', {'report_form': report_form, 'report': report})

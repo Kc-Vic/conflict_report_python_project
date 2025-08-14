@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+{% load crispy_forms_tags %}
+
+<div class ="container mt-5">
+    <h2>Edit Report</h2>
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ report_form|crispy }}
+        <button type="submit" class="btn btn-primary">Update Report</button>
+        <a href="{% url 'report_detail' report.slug %}" class="btn btn-secondary">Cancel</a>
+    </form>
+</div>
+
+{% endblock content %}

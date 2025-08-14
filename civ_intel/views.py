@@ -2,7 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.views import generic
 from django.contrib import messages
 from .models import Report
-from .forms import CommentForm
+from .forms import CommentForm, ReportForm
 
 # Create your views here.
 
@@ -13,6 +13,21 @@ class ReportFeedView(generic.ListView):
    queryset = Report.objects.all().order_by('-created_at')
    template_name = 'civ_intel/index.html'
    paginate_by = 3
+
+def report_add(request):
+   if request.method == "POST":
+       report_form = ReportForm(request.POST, request.FILES)
+       if report_form.is_valid():
+           report = report_form.save(commit=False)
+           report.author = request.user
+           report.save()
+           messages.add_message(
+               request, messages.SUCCESS, "Your report has been submitted"
+           )
+           return redirect('civ_intel:feed')
+   else:
+      report_form = ReportForm()
+   return render(request, 'civ_intel/report_add.html', {'report_form': report_form})
 
 def report_detail(request, slug):
    queryset = Report.objects

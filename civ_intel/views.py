@@ -1,3 +1,10 @@
+"""
+This file contains views for the civ_intel application.
+It handles the logic for displaying reports, adding new reports,  editing, deleting reports,
+and viewing report details.
+
+"""
+
 from django.shortcuts import render, get_object_or_404
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
@@ -14,7 +21,7 @@ class ReportAboutView(generic.TemplateView):
 class ReportFeedView(generic.ListView):
    queryset = Report.objects.all().order_by('-created_at')
    template_name = 'civ_intel/index.html'
-   paginate_by = 3
+   paginate_by = 6
 
 @login_required
 def report_add(request):

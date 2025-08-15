@@ -1,3 +1,11 @@
+"""
+
+This file contains models for the civ_intel application.
+It defines the data structures for reports, comments, states, and about information.
+
+"""
+
+
 from django.db import models
 from django.utils.text import slugify
 import uuid
@@ -11,6 +19,12 @@ STATUS = (
 )
 
 # Create your models here.
+
+"""
+This model represents the About section of the application.
+It contains a title and content field.
+
+"""
 class About(models.Model):
     title = models.CharField(max_length=200, unique=True)
     content = models.TextField()
@@ -29,6 +43,11 @@ class State(models.Model):
     def __str__(self):
         return self.name
 
+"""
+This model represents a report in the application.
+It uses the author as foreign key to link to the User model.
+
+"""
 
 class Report(models.Model):
     title = models.CharField(max_length=200, unique=True)
@@ -59,6 +78,13 @@ class Report(models.Model):
     )
     class Meta:
         ordering = ['-created_at']
+
+    """
+    The __str__ method returns a string representation of the report.
+    It includes the title and author of the report.
+    
+    """
+
     def __str__(self):
         return f"{self.title} {self.author}"
     def save(self, *args, **kwargs):

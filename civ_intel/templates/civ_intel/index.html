@@ -6,7 +6,7 @@
 <div class="container-fluid">
     <div class="row">
 
-        <!-- Blog Entries Column -->
+        <!-- Report Entries Column -->
         <div class="col-12 mt-3 left">
             <div class="row">
                 {% for report in object_list %}
@@ -24,10 +24,12 @@
                                     </p>
                                 </div>
                             </div>
+                            <!--Report title linking to the details page-->
                             <a href="{% url 'report_detail' report.slug %}" class="post-link">
                                 <h2 class="card-title">{{ report.title }}</h2>
                             </a>
-                            <span><p class="card-text text-muted h6">{{ report.location }}</p></span>
+                            <!--Dropdown for states-->
+                            <span class="card-text text-muted h6">{{ report.location }}</span>
                             <span class="badge bg-secondary">
                                 {% if report.status == 0 %}
                                 <i class="fal fa-badge">Unverified</i>
@@ -38,7 +40,7 @@
                                 {% endif %}
                             </span>
 
-                            <hr />
+                            <hr>
                             <p class="card-text">{{ report.content|truncatewords:30|safe }}</p>
                             <a href="{% url 'report_detail' report.slug %}" class="mb-2 post-link">
                                 <strong class="text-secondary">

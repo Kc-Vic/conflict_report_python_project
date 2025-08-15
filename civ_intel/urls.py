@@ -1,3 +1,11 @@
+"""
+
+This file contains URL patterns for the civ_intel application.
+It maps URLs to views for handling reports and comments.
+
+
+"""
+
 from . import views
 from django.urls import path
 

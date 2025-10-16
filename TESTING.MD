@@ -290,6 +290,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 - **Temporary Fix**: Moved styles to template with {% static %} tag
 - **Permanent Solution Needed**: Configure proper static file serving
 
+#### Issue 3: Secret Key Exposed
+- **Problem**: Secret Key was included in the settings.py
+- **Cause**: Secret key was called directly in the settings file
+- **Solution**: Changed the scret key to invalidate exposed key. Moved new key to .env and added to gitignore. Called secret key from       .env in settings file.
+
 ## User Stories Implementation
 
 ### User Story 1: Report Incidents

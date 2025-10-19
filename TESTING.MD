@@ -272,6 +272,17 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 <button data-bs-toggle="modal" data-bs-target="#deleteModal">
 ```
 
+### Bug 5: Secret Key Exposed
+- **Issue**: The SECRET_KEY was hard-coded in settings.py and accidentally committed to the repository.
+- **Fix**: 
+    1. Moved the SECRET_KEY to an env.py file. 
+    2. Added env.py to .gitignore to prevent future commits. 
+    3. Updated the settings.py to load the SECRET_HKY from the environment. 
+    4. Replaced the secret key to invalidate the exposed key in the live production environment.
+```python
+SECRET_KEY = 'os.getenv("SECRET_KEY")'
+```
+
 ### Remaining Issues
 
 #### Issue 1: Image Upload and Display
